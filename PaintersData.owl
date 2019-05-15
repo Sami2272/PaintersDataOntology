@@ -1,0 +1,288 @@
+@prefix : <http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10> .
+
+<http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Contains
+
+:Contains rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain :CulturalPlace ;
+          
+          rdfs:range :Painting .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Located
+
+:Located rdf:type owl:ObjectProperty ;
+         
+         rdfs:range :Address ;
+         
+         rdfs:domain :CulturalPlace .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#hasContact
+
+:hasContact rdf:type owl:ObjectProperty ;
+            
+            rdfs:range :Contact ;
+            
+            rdfs:domain :CulturalPlace .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#paintedBy
+
+:paintedBy rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain :Artist ;
+           
+           rdfs:range :Painting .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#artistName
+
+:artistName rdf:type owl:DatatypeProperty ;
+            
+            rdfs:domain :Artist ;
+            
+            rdfs:range rdfs:Literal .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#hasValue
+
+:hasValue rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :Contact ;
+          
+          rdfs:range rdfs:Literal .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#name
+
+:name rdf:type owl:DatatypeProperty ;
+      
+      rdfs:domain :CulturalPlace ;
+      
+      rdfs:range rdfs:Literal .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#paintingName
+
+:paintingName rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :Painting ;
+              
+              rdfs:range rdfs:Literal .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#town
+
+:town rdf:type owl:DatatypeProperty ;
+      
+      rdfs:domain :Address ;
+      
+      rdfs:range rdfs:Literal .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#yearOfBirth
+
+:yearOfBirth rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Artist ;
+             
+             rdfs:range xsd:dateTime .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Address
+
+:Address rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Artist
+
+:Artist rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Contact
+
+:Contact rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#CulturalPlace
+
+:CulturalPlace rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Fax
+
+:Fax rdf:type owl:Class ;
+     
+     rdfs:subClassOf :Contact .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Museum
+
+:Museum rdf:type owl:Class ;
+        
+        rdfs:subClassOf :CulturalPlace .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Painting
+
+:Painting rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Phone
+
+:Phone rdf:type owl:Class ;
+       
+       rdfs:subClassOf :Contact .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Artist_Name
+
+:Artist_Name rdf:type :Artist ,
+                      owl:NamedIndividual ;
+             
+             :yearOfBirth "1998"^^xsd:int ;
+             
+             :paintingName "Faisal Mosque"^^xsd:Name ;
+             
+             :artistName "Hassan"^^xsd:Name ;
+             
+             :town "Islamabad"^^xsd:Name ,
+                   "Pakistan"^^xsd:Name ;
+             
+             :artistName "Sami"^^xsd:Name ;
+             
+             :paintingName "Tomb of Bahauddin Zikria Multani  "^^xsd:Name .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#England
+
+:England rdf:type :Address ,
+                  owl:NamedIndividual ;
+         
+         :town """London
+"""^^xsd:Name .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Fax_no
+
+:Fax_no rdf:type :Fax ,
+                 owl:NamedIndividual ;
+        
+        :hasValue 02172485387 .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Old_Museum
+
+:Old_Museum rdf:type :Museum ,
+                     owl:NamedIndividual ;
+            
+            :name "Multan  Museum"^^xsd:Name .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Pakistan
+
+:Pakistan rdf:type :Address ,
+                   owl:NamedIndividual ;
+          
+          :town """Multan
+"""^^xsd:Name .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Phone_no
+
+:Phone_no rdf:type :Phone ,
+                   owl:NamedIndividual ;
+          
+          :hasValue 03098263892 .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Qatar
+
+:Qatar rdf:type :Address ,
+                owl:NamedIndividual ;
+       
+       :town """Oman
+"""^^xsd:Name .
+
+
+
+###  http://www.semanticweb.org/sami/ontologies/2019/4/untitled-ontology-10#Tomb_Of_Shah_Shams
+
+:Tomb_Of_Shah_Shams rdf:type :CulturalPlace ,
+                             owl:NamedIndividual ;
+                    
+                    :name "Shah Shms Tomb"^^xsd:Name .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
